@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <input class="border w-full py-2 px-4 mb-2" type="text" placeholder="Product name" formControlName="title" appFocus>
+  <p class="text-red-500 font-medium text-sm mb-2" *ngIf="title.errors?.['minlength'] && title.touched">Length of title
+    should be more
+    than 6 symbols. Now {{title.value.length}} symbols.</p>
+  <input class="border w-full py-2 px-4 mb-2" type="number" placeholder="Price" formControlName="price">
+  <input class="border w-full py-2 px-4 mb-2" type="text" placeholder="Description" formControlName="description">
+  <input class="border w-full py-2 px-4 mb-2" type="text" placeholder="Category" formControlName="category">
+  <input class="border w-full py-2 px-4 mb-2" type="text" placeholder="Image link" formControlName="image"
+    value="image.value">
+  <input class="border w-full py-2 px-4 mb-2" type="number" placeholder="Rate" formControlName="rate">
+  <input class="border w-full py-2 px-4 mb-2" type="number" placeholder="Count" formControlName="count">
+
+  <div class="flex mt-2">
+    <button class="py-2 px-4 bg-green-500 text-white w-full mr-2" type="submit">Create</button>
+    <button class="py-2 px-4 bg-red-500 text-white w-1/2" type="reset">Clear</button>
+  </div>
+</form>
